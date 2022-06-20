@@ -1,0 +1,20 @@
+.search {
+    background: rgb(235, 233, 233);
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    border: 2px solid rgb(182, 181, 181);
+    border-radius: 10px;
+    h2 {
+        width: min-content;
+        margin: 0 auto 15px;
+    }
+    input {
+        font-size: 20px;
+        width: 100%;
+        border: 1px solid grey;
+        border-radius: 9px;
+        padding: 0 0 0 10px;
+    }
+}

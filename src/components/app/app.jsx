@@ -41,6 +41,7 @@ class App extends Component {
                     salary: 280
                 },
             ],
+            term: ''
         };
         this.maxId = 5;
     }
@@ -82,11 +83,25 @@ class App extends Component {
         return '0';
     }
 
+    searchPosts = (arr, term) => {
+        if (term.length === 0) {
+            return arr;
+        }
+        return arr.filter(item => {
+            return item.title.indexOf(term) > -1
+        })
+    }
+
+    onUpdateSearch = (term) => {
+        this.setState({term});
+    }
+
     render() {
-        const { data } = this.state;
+        const { data, term } = this.state;
         const posts = data.length;
         const minSalary = this.arrSalary('min');
         const maxSalary = this.arrSalary('max');
+        const visibleData = this.searchPosts(data, term);
 
         this.arrSalary();
         return (
@@ -97,9 +112,10 @@ class App extends Component {
                         onAddPost={this.onAddPost}
                         posts={posts}
                         minSalary={minSalary}
-                        maxSalary={maxSalary} />
+                        maxSalary={maxSalary}
+                        onUpdateSearch={this.onUpdateSearch} />
                     <List
-                        data={data}
+                        data={visibleData}
                         onDeletePost={this.onDeletePost}/>
                 </main>
             </div>
