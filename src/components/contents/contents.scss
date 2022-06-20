@@ -1,0 +1,23 @@
+.contents {
+    background: rgb(235, 233, 233);
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    border: 2px solid rgb(182, 181, 181);
+    border-radius: 10px;
+    h2 {
+        width: min-content;
+        margin: 0 auto 15px;
+    }
+    ul {
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}

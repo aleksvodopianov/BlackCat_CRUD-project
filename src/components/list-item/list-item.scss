@@ -1,0 +1,40 @@
+.list-item {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background: rgb(247, 247, 247);
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    border: 2px solid rgb(222, 222, 222);
+    border-radius: 10px;
+    overflow: hidden;
+    h2 {
+        margin-bottom: 10px;
+    }
+    .poster-footer {
+        width: calc(100% - 30px);
+        height: 28px;
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        p {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        img {
+            width: 25px;
+            height: 25px;
+            &:hover {
+                width: 28px;
+                height: 28px;
+            }
+            &:active {
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+}
