@@ -22,8 +22,9 @@ button {
 .btn-light {
     color: rgb(60, 60, 60);
     background: rgb(153, 152, 152);
-    border: 1px solid rgb(145, 143, 143);
+    // border: 1px solid rgb(145, 143, 143);
     outline: 2px solid rgb(189, 187, 187);
+    box-sizing: border-box;
 }
 .btn-dark {
     color: rgb(153, 152, 152);

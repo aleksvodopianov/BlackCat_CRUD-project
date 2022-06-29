@@ -15,7 +15,7 @@ class SideNav extends Component {
     }
 
     render() {
-        const { onAddPost, posts, minSalary, maxSalary, onUpdateSearch } = this.props;
+        const { onAddPost, posts, minSalary, maxSalary, onUpdateSearch, filter, onFilterSelect } = this.props;
         return (
             <div className="side-nav">
                 <Contents
@@ -24,7 +24,9 @@ class SideNav extends Component {
                     maxSalary={maxSalary} />
                 <AddForm onAddPost={onAddPost}/>
                 <Search onUpdateSearch={onUpdateSearch} />
-                <Filter/>
+                <Filter
+                    filter={filter}
+                    onFilterSelect={onFilterSelect} />
             </div>
         );
     }

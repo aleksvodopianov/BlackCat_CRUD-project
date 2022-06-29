@@ -41,7 +41,8 @@ class App extends Component {
                     salary: 280
                 },
             ],
-            term: ''
+            term: '',
+            filter: 'all',
         };
         this.maxId = 5;
     }
@@ -97,12 +98,31 @@ class App extends Component {
         this.setState({term});
     }
 
+    filterPost = (items, filter) => {
+        switch (filter) {
+            case 'up':
+                return items.sort(function(a, b) {
+                    return a.salary - b.salary;
+                  });
+            case 'down':
+                return items.sort(function(a, b) {
+                    return b.salary - a.salary;
+                  });
+            default:
+                return items
+        }
+    }
+
+    onFilterSelect = (filter) => {
+        this.setState({filter});
+    }
+
     render() {
-        const { data, term } = this.state;
+        const { data, term, filter } = this.state;
         const posts = data.length;
         const minSalary = this.arrSalary('min');
         const maxSalary = this.arrSalary('max');
-        const visibleData = this.searchPosts(data, term);
+        const visibleData = this.filterPost(this.searchPosts(data, term), filter);
 
         this.arrSalary();
         return (
@@ -114,7 +134,9 @@ class App extends Component {
                         posts={posts}
                         minSalary={minSalary}
                         maxSalary={maxSalary}
-                        onUpdateSearch={this.onUpdateSearch} />
+                        onUpdateSearch={this.onUpdateSearch}
+                        filter={filter}
+                        onFilterSelect={this.onFilterSelect} />
                     <List
                         data={visibleData}
                         onDeletePost={this.onDeletePost}/>
