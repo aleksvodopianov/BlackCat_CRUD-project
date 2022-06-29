@@ -55,18 +55,19 @@ class App extends Component {
     }
 
     onAddPost = (title, content, salary) => {
-        const newPost = {
-            id: this.maxId++,
-            title,
-            content,
-            salary
-        };
-        this.setState(({data}) => {
-            return {
-                data: [...data, newPost]
+        if (title && content && salary) {
+            const newPost = {
+                id: this.maxId++,
+                title,
+                content,
+                salary
             };
-        });
-        
+            this.setState(({data}) => {
+                return {
+                    data: [...data, newPost]
+                };
+            });
+        }
     }
 
     arrSalary = (val) => {

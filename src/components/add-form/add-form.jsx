@@ -60,7 +60,7 @@ class AddForm extends Component {
                         onChange={this.onValueChange}
                     />
 
-                    <button type="submit" className="btn btn-outline-light">
+                    <button type="submit" className="btn-dark">
                         Add
                     </button>
                 </form>

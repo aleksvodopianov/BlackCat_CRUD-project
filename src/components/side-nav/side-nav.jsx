@@ -2,6 +2,7 @@ import { Component } from 'react';
 import AddForm from '../add-form/add-form';
 import Contents from '../contents/contents';
 import Search from '../search/search';
+import Filter from '../filter/filter';
 
 import './side-nav.scss';
 
@@ -23,6 +24,7 @@ class SideNav extends Component {
                     maxSalary={maxSalary} />
                 <AddForm onAddPost={onAddPost}/>
                 <Search onUpdateSearch={onUpdateSearch} />
+                <Filter/>
             </div>
         );
     }
