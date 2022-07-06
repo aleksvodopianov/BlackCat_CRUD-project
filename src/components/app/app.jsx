@@ -2,6 +2,8 @@ import { Component } from 'react';
 import Header from '../header/header';
 import List from '../list/list';
 import SideNav from '../side-nav/side-nav';
+import BootstrapComponent from '../bootstrap-component/bootstrap-component';
+import CarouselComponent from '../carousel/carousel';
 
 import blackCat from '../../img/blackCat.svg';
 
@@ -140,7 +142,9 @@ class App extends Component {
                     <List
                         data={visibleData}
                         onDeletePost={this.onDeletePost}/>
+                    <BootstrapComponent/>
                 </main>
+                <CarouselComponent/>
             </div>
         );
     }
